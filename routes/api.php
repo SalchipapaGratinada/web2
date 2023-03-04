@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,6 +20,11 @@ Route::get('/', function () {
 });
 
 Route::get('/mensaje', [ExampleController::class, 'mensaje']);
+
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'create']);
+
+
 
 Route::post('/mensaje', function () {
     $arr = array(1,2,3);
